@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:reverseInteger/reverseInteger.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:permutation/permutation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:isNumber/isNumber.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:wordLadderII/wordLadderII.xcodeproj">
    </FileRef>
    <FileRef
