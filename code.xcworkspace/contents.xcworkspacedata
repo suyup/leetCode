@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:surroundedRegions/surroundedRegions.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:twoSum/twoSum.xcodeproj">
    </FileRef>
    <FileRef
