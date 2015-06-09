@@ -9,12 +9,13 @@
 #include <iostream>
 #include <vector>
 #include <unordered_set>
+#include <unordered_map>
 #include <string>
 #include <queue>
 
 using namespace std;
 
-class Solution {
+class Solution_So_Slow {
 public:
     vector<vector<string>> findLadders(string start, string end, unordered_set<string> &dict) {
         dict.insert(start);
@@ -92,6 +93,84 @@ private:
         return ret;
     }
 };
+
+
+class Solution {
+public:
+    vector<vector<string>> findLadders(string start, string end, unordered_set<string> &dict) {
+        vector<vector<string>> ret;
+        unordered_map<string, vector<vector<string>>> left, right;
+        unordered_map<string, vector<vector<string>>> *a_ptr = &left, *b_ptr = &right;
+        left.insert({start, {1, {1, start}}});
+        right.insert({end, {1, {1, end}}});
+        dict.erase(start);
+        dict.erase(end);
+        bool shouldStop = false;
+        
+        while(!shouldStop) {
+            unordered_map<string, vector<vector<string>>> tmp;
+            unordered_set<string> deletingDict;
+            
+            for(pair<string, vector<vector<string>>> &&p : *a_ptr) {
+                for(size_t i = 0; i < start.size(); ++i) {
+                    for(char c = 'a'; c <= 'z'; ++c) {
+                        string s(p.first);
+                        s[i] = c;
+                        auto &&itr = (*b_ptr).find(s);
+                        
+                        // found!
+                        if (itr != right.end()) {
+                            vector<vector<string>> *left_paths;
+                            vector<vector<string>> *right_paths;
+                            if (a_ptr == &left) {
+                                left_paths = &p.second;
+                                right_paths = &(*itr).second;
+                            } else {
+                                left_paths = &(*itr).second;
+                                right_paths = &p.second;
+                            }
+                            
+                            for(auto &&l : *left_paths) {
+                                for(auto &&r : *right_paths) {
+                                    vector<string> vec(l);
+                                    vec.insert(vec.end(), r.rbegin(), r.rend());
+                                    ret.push_back(vec);
+                                }
+                            }
+                            
+                            shouldStop = true;
+                            
+                        } else if(dict.find(s) != dict.end()) {
+                            for(auto path : p.second) {
+                                path.push_back(s);
+                                tmp[s].push_back(path);
+                            }
+                            deletingDict.insert(s);
+                        }
+                    }
+                }
+            } // end for
+            
+            for_each(deletingDict.begin(), deletingDict.end(), [&](const string &s){dict.erase(s);});
+            
+            if (tmp.empty()) shouldStop = true;
+            
+            if (!shouldStop) {
+                *a_ptr = tmp;
+                if(left.size() < right.size()) {
+                    a_ptr = &left;
+                    b_ptr = &right;
+                } else {
+                    a_ptr = &right;
+                    b_ptr = &left;
+                }
+            }
+        } // end while
+        
+        return ret;
+    }
+};
+
 
 int main(int argc, const char * argv[]) {
     unordered_set<string> aSet = {"hot","dot","dog","lot","log"};
