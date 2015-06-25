@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:longestSubstring/longestSubstring.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:editDistance/editDistance.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:3SumClosest/3SumClosest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:decodeWays/decodeWays.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:surroundedRegions/surroundedRegions.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:twoSum/twoSum.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:reverseInteger/reverseInteger.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:permutation/permutation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:isNumber/isNumber.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:wordLadderII/wordLadderII.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:rotateArray/rotateArray.xcodeproj">
+   </FileRef>
+</Workspace>
