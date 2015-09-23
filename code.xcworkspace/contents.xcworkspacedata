@@ -2,6 +2,21 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Palindrome Number/Palindrome Number.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ValidPalindrome/ValidPalindrome.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:BalancedBinaryTree/BalancedBinaryTree.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MaximumDepthofBinaryTree/MaximumDepthofBinaryTree.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RemoveLinkListElements/RemoveLinkListElements.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:bestTimeToBuyAndShareStock/bestTimeToBuyAndShareStock.xcodeproj">
    </FileRef>
    <FileRef
