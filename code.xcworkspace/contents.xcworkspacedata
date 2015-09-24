@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Reverse Bits/Reverse Bits.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Hamming Weight/Hamming Weight.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Same Tree/Same Tree.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Palindrome Number/Palindrome Number.xcodeproj">
    </FileRef>
    <FileRef
